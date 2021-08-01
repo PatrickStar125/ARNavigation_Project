@@ -17,10 +17,6 @@ namespace ARNavigation
         /// </summary>
         public string inputName;
         /// <summary>
-        /// 动态添加物体保存地址
-        /// </summary>
-        private static readonly string pathDynamicObject = "/dynamicobject.txt";
-        /// <summary>
         /// 关键点保存地址
         /// </summary>
         private static readonly string pathKeyPoint = "/keypoint.txt";
@@ -127,22 +123,6 @@ namespace ARNavigation
         public List<string> LoadKeyPoint()
         {
             return LoadStringList(Application.persistentDataPath + pathKeyPoint);
-        }
-        /// <summary>
-        /// 保存动态添加物体信息
-        /// </summary>
-        /// <param name="stringArray">JSON字符串数组</param>
-        public void SaveDynamicObject(string[] stringArray)
-        {
-            SaveStringArray(stringArray, Application.persistentDataPath + pathDynamicObject);
-        }
-        /// <summary>
-        /// 读取动态添加物体信息
-        /// </summary>
-        /// <returns>物体JSON字符串列表</returns>
-        public List<string> LoadDynamicObject()
-        {
-            return LoadStringList(Application.persistentDataPath + pathDynamicObject);
         }
         /// <summary>
         /// 保存字符串数组

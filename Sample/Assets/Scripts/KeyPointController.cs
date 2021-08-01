@@ -12,33 +12,13 @@ namespace ARNavigation
         /// </summary>
         private GameController game;
         /// <summary>
-        /// 返回界面
-        /// </summary>
-        public GameObject uiBack;
-        /// <summary>
-        /// 主界面
-        /// </summary>
-        public GameObject uiMain;
-        /// <summary>
         /// 被选中的游戏对象
         /// </summary>
         private Transform selected;
         /// <summary>
-        /// 添加按钮
-        /// </summary>
-        public Button btnAdd;
-        /// <summary>
         /// 提示信息文本
         /// </summary>
         public Text textInfo;
-        /// <summary>
-        /// 关键点名称输入框
-        /// </summary>
-        public InputField inputField;
-        /// <summary>
-        /// 关键点类型下拉列表
-        /// </summary>
-        public Dropdown dropdown;
         /// <summary>
         /// 滚动视图容器
         /// </summary>
@@ -51,28 +31,13 @@ namespace ARNavigation
         /// 删除按钮
         /// </summary>
         public Button btnDelete;
-        /// <summary>
-        /// 稀疏空间地图框架
-        /// </summary>
-        public SparseSpatialMapWorkerFrameFilter mapWorker;
-        /// <summary>
-        /// 稀疏空间地图
-        /// </summary>
-        public SparseSpatialMapController map;
-        /// <summary>
-        /// 平面图像跟踪器
-        /// </summary>
-        public ImageTrackerFrameFilter imageTracker;
+
 
         void Start()
         {
             game = FindObjectOfType<GameController>();
             Load();
-            btnAdd.interactable = false;
             btnDelete.interactable = false;
-            Close();
-            imageTracker.enabled = false;
-            LoadMap();
         }
         void Update()
         {
@@ -97,41 +62,6 @@ namespace ARNavigation
             }
         }
         /// <summary>
-        /// 本地化地图
-        /// </summary>
-        private void LoadMap()
-        {
-            //设置地图
-            map.MapManagerSource.ID = game.GetMapID();
-            map.MapManagerSource.Name = game.GetMapName();
-            //地图获取反馈
-            map.MapLoad += (map, status, error) =>
-            {
-                if (status)
-                {
-                    textInfo.text = "地图加载成功。";
-                }
-                else
-                {
-                    textInfo.text = "地图加载失败：" + error;
-                }
-            };
-            //定位成功事件
-            map.MapLocalized += () =>
-            {
-                textInfo.text = "稀疏空间定位成功。";
-                imageTracker.enabled = true;
-            };
-            //停止定位事件
-            map.MapStopLocalize += () =>
-            {
-                textInfo.text = "停止稀疏空间定位。";
-                imageTracker.enabled = false;
-            };
-            textInfo.text = "开始本地化稀疏空间。";
-            mapWorker.Localizer.startLocalization();    //本地化地图
-        }
-        /// <summary>
         /// 点击物体
         /// </summary>
         /// <param name="ray"></param>
@@ -139,13 +69,9 @@ namespace ARNavigation
         {
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                uiBack.SetActive(false);
-                uiMain.SetActive(true);
                 var tf = new GameObject().transform;
                 tf.position = hit.transform.position;
-                tf.parent = map.transform;
                 selected = tf;
-                btnAdd.interactable = true;
             }
         }
         /// <summary>
@@ -156,35 +82,6 @@ namespace ARNavigation
             if (game)
             {
                 game.BackMenu();
-            }
-        }
-        /// <summary>
-        /// 关闭主界面
-        /// </summary>
-        public void Close()
-        {
-            uiMain.SetActive(false);
-            uiBack.SetActive(true);
-        }
-        /// <summary>
-        /// 添加关键点
-        /// </summary>
-        public void Add()
-        {
-            if (!string.IsNullOrEmpty(inputField.text) && selected != null)
-            {
-                SelectButton btn = Instantiate(prefab, svContent);
-
-                btn.keyPoint.name = inputField.text;
-                btn.keyPoint.position = selected.localPosition;
-                btn.keyPoint.pointType = dropdown.value;
-
-                btn.GetComponentInChildren<Text>().text = inputField.text;
-
-                inputField.text = "";
-                selected = null;
-                textInfo.text = "添加完成。";
-                btnAdd.interactable = false;
             }
         }
         /// <summary>
@@ -200,7 +97,7 @@ namespace ARNavigation
             if (game)
             {
                 game.SaveKeyPoint(jsons);
-                textInfo.text = "保存完成。";
+                textInfo.text = "保存完成";
             }
         }
         /// <summary>
@@ -228,7 +125,6 @@ namespace ARNavigation
             selected = btn;
             textInfo.text = btn.GetComponentInChildren<Text>().text;
             btnDelete.interactable = true;
-            btnAdd.interactable = false;
         }
         /// <summary>
         /// 删除关键点
@@ -236,7 +132,7 @@ namespace ARNavigation
         public void Delete()
         {
             Destroy(selected.gameObject);
-            textInfo.text = "删除完成。";
+            textInfo.text = "已删除所选关键点";
             btnDelete.interactable = false;
         }
     }

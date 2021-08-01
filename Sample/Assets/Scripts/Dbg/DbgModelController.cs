@@ -44,7 +44,6 @@ namespace ARNavigation.Dbg
             game = FindObjectOfType<GameController>();
             uiControl = FindObjectOfType<UIControlObject>();
             Close();
-            Load();
         }
         /// <summary>
         /// 返回菜单
@@ -122,29 +121,6 @@ namespace ARNavigation.Dbg
         // }
 
         /// <summary>
-        /// 保存物体
-        /// </summary>
-        public void Save()
-        {
-            string[] jsons = new string[ssMap.childCount - 1];
-            for (int i = 0; i < ssMap.childCount; i++)
-            {
-                if (ssMap.GetChild(i).name != "PointCloudParticleSystem")
-                {
-                    DynamicObject dynamicObject = new DynamicObject();
-                    dynamicObject.position = ssMap.GetChild(i).localPosition;
-                    dynamicObject.rotation = ssMap.GetChild(i).localEulerAngles;
-                    dynamicObject.scale = ssMap.GetChild(i).localScale;
-                    jsons[i - 1] = JsonUtility.ToJson(dynamicObject);
-                }
-            }
-            if (game)
-            {
-                game.SaveDynamicObject(jsons);
-                textShow.text = "保存" + (ssMap.childCount - 1) + "个游戏对象";
-            }
-        }
-        /// <summary>
         /// 删除物体
         /// </summary>
         public void Delete()
@@ -153,24 +129,6 @@ namespace ARNavigation.Dbg
             uiControl.ClearSelected();
             Destroy(go);
             textShow.text = "删除选中物体，请保存结果。";
-        }
-        /// <summary>
-        /// 加载物体
-        /// </summary>
-        private void Load()
-        {
-            if (game)
-            {
-                var list = game.LoadDynamicObject();
-                foreach (var item in list)
-                {
-                    var dynamicObject = JsonUtility.FromJson<DynamicObject>(item);
-                    var tf = Instantiate(blueBox, ssMap).transform;
-                    tf.localPosition = dynamicObject.position;
-                    tf.localEulerAngles = dynamicObject.rotation;
-                    tf.localScale = dynamicObject.scale;
-                }
-            }
         }
     }
 }

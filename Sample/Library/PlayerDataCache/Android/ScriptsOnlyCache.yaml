@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - IngameDebugConsole.DebugsOnScrollListener
     Assembly-CSharp.dll:
     - ARNavigation.GameController
+    - ARNavigation.KPDate
     - ARNavigation.KeyPointController
     - ARNavigation.MapController
     - ARNavigation.MenuController
@@ -23,8 +24,6 @@ ScriptsOnlyBuild:
     - easyar.EasyARController
     - easyar.EasyARSettings
     - easyar.EasyARShaders
-    - easyar.ImageTargetController
-    - easyar.ImageTrackerFrameFilter
     - easyar.RenderCameraController
     - easyar.SparseSpatialMapController
     - easyar.SparseSpatialMapWorkerFrameFilter
@@ -71,17 +70,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
     - Class: 48
-      Script: {instanceID: 0}
-    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -98,53 +89,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11364}
     - Class: 114
-      Script: {instanceID: 11462}
-    - Class: 114
       Script: {instanceID: 11550}
     - Class: 114
       Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 11696}
     - Class: 114
-      Script: {instanceID: 11698}
-    - Class: 114
-      Script: {instanceID: 11890}
-    - Class: 114
-      Script: {instanceID: 11910}
-    - Class: 114
-      Script: {instanceID: 11968}
+      Script: {instanceID: 11908}
     - Class: 114
       Script: {instanceID: 12014}
     - Class: 114
-      Script: {instanceID: 12088}
-    - Class: 114
       Script: {instanceID: 12228}
     - Class: 114
-      Script: {instanceID: 12370}
+      Script: {instanceID: 12454}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12554}
     - Class: 114
-      Script: {instanceID: 12544}
+      Script: {instanceID: 13030}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 13032}
     - Class: 114
-      Script: {instanceID: 12654}
-    - Class: 114
-      Script: {instanceID: 12780}
-    - Class: 114
-      Script: {instanceID: 12784}
-    - Class: 114
-      Script: {instanceID: 13016}
-    - Class: 114
-      Script: {instanceID: 13026}
-    - Class: 114
-      Script: {instanceID: 13354}
-    - Class: 114
-      Script: {instanceID: 13370}
-    - Class: 114
-      Script: {instanceID: 13384}
-    - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 13376}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -152,10 +117,6 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 198
-      Script: {instanceID: 0}
-    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -199,7 +160,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11890}
+      Script: {instanceID: 11888}
     - Class: 114
       Script: {instanceID: 11968}
     - Class: 114
@@ -209,17 +170,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12182}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12454}
     - Class: 114
-      Script: {instanceID: 12544}
+      Script: {instanceID: 12548}
     - Class: 114
-      Script: {instanceID: 12780}
+      Script: {instanceID: 12784}
     - Class: 114
-      Script: {instanceID: 13016}
+      Script: {instanceID: 13020}
     - Class: 114
-      Script: {instanceID: 13370}
+      Script: {instanceID: 13376}
     - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 13416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -276,43 +237,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11714}
     - Class: 114
-      Script: {instanceID: 11804}
+      Script: {instanceID: 11802}
     - Class: 114
       Script: {instanceID: 12014}
     - Class: 114
       Script: {instanceID: 12228}
     - Class: 114
-      Script: {instanceID: 12308}
+      Script: {instanceID: 12310}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12454}
     - Class: 114
-      Script: {instanceID: 12512}
+      Script: {instanceID: 12516}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12522}
     - Class: 114
-      Script: {instanceID: 12654}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 12664}
+      Script: {instanceID: 12668}
     - Class: 114
-      Script: {instanceID: 12684}
+      Script: {instanceID: 12688}
     - Class: 114
-      Script: {instanceID: 12802}
+      Script: {instanceID: 12806}
     - Class: 114
-      Script: {instanceID: 12898}
+      Script: {instanceID: 12902}
     - Class: 114
-      Script: {instanceID: 13190}
+      Script: {instanceID: 13196}
     - Class: 114
-      Script: {instanceID: 13296}
+      Script: {instanceID: 13302}
     - Class: 114
-      Script: {instanceID: 13326}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13348}
-    - Class: 114
-      Script: {instanceID: 13364}
+      Script: {instanceID: 13354}
     - Class: 114
       Script: {instanceID: 13370}
+    - Class: 114
+      Script: {instanceID: 13376}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -373,9 +334,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11890}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11962}
+      Script: {instanceID: 11888}
+    - Class: 114
+      Script: {instanceID: 11908}
     - Class: 114
       Script: {instanceID: 11968}
     - Class: 114
@@ -383,21 +346,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12088}
     - Class: 114
+      Script: {instanceID: 12228}
+    - Class: 114
       Script: {instanceID: 12242}
     - Class: 114
       Script: {instanceID: 12282}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12298}
     - Class: 114
-      Script: {instanceID: 12544}
+      Script: {instanceID: 12374}
     - Class: 114
-      Script: {instanceID: 12780}
+      Script: {instanceID: 12454}
     - Class: 114
-      Script: {instanceID: 13016}
+      Script: {instanceID: 12548}
     - Class: 114
-      Script: {instanceID: 13370}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 12784}
+    - Class: 114
+      Script: {instanceID: 13020}
+    - Class: 114
+      Script: {instanceID: 13360}
+    - Class: 114
+      Script: {instanceID: 13376}
+    - Class: 114
+      Script: {instanceID: 13390}
+    - Class: 114
+      Script: {instanceID: 13416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -476,11 +451,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11698}
+      Script: {instanceID: 11696}
     - Class: 114
-      Script: {instanceID: 11890}
+      Script: {instanceID: 11888}
     - Class: 114
-      Script: {instanceID: 11910}
+      Script: {instanceID: 11908}
     - Class: 114
       Script: {instanceID: 11968}
     - Class: 114
@@ -496,23 +471,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12248}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12454}
     - Class: 114
-      Script: {instanceID: 12544}
+      Script: {instanceID: 12548}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 12554}
     - Class: 114
-      Script: {instanceID: 12780}
+      Script: {instanceID: 12784}
     - Class: 114
-      Script: {instanceID: 12946}
+      Script: {instanceID: 12950}
     - Class: 114
-      Script: {instanceID: 13016}
+      Script: {instanceID: 13020}
     - Class: 114
-      Script: {instanceID: 13026}
+      Script: {instanceID: 13030}
     - Class: 114
-      Script: {instanceID: 13370}
+      Script: {instanceID: 13376}
     - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 13416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -577,27 +552,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11698}
+      Script: {instanceID: 11696}
     - Class: 114
-      Script: {instanceID: 11910}
+      Script: {instanceID: 11908}
     - Class: 114
       Script: {instanceID: 12014}
     - Class: 114
       Script: {instanceID: 12228}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12454}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 12554}
     - Class: 114
-      Script: {instanceID: 12592}
+      Script: {instanceID: 12596}
     - Class: 114
-      Script: {instanceID: 13026}
+      Script: {instanceID: 13030}
     - Class: 114
-      Script: {instanceID: 13354}
+      Script: {instanceID: 13360}
     - Class: 114
-      Script: {instanceID: 13370}
+      Script: {instanceID: 13376}
     - Class: 114
-      Script: {instanceID: 13384}
+      Script: {instanceID: 13390}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -751,12 +726,6 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 8bdf91ba57cb6504c0531c6046abed7a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ARNavigation
-    className: KeyPointController
-  - hash:
-      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -835,6 +804,12 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: 1f45de97eb2571a4b0bdde9945754c9b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ARNavigation
+    className: KeyPointModel
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -847,10 +822,10 @@ ScriptsOnlyBuild:
     className: DbgModelController
   - hash:
       serializedVersion: 2
-      Hash: 34268b6b9a548bb960aaf1975aab2223
+      Hash: 722173dd2598cde89fd6606692c22db7
     assemblyName: Assembly-CSharp.dll
     namespaceName: ARNavigation
-    className: ModelController
+    className: KeyPointModelController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -961,10 +936,16 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: e2ea153d458de3e2eb96c59d54e39b6c
+      Hash: 528d042849821709dcf04cc810135c8a
     assemblyName: Assembly-CSharp.dll
     namespaceName: ARNavigation
     className: UIControlObject
+  - hash:
+      serializedVersion: 2
+      Hash: d67716d08a19e4b30eadff3fa0221697
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ARNavigation
+    className: KPDate
   - hash:
       serializedVersion: 2
       Hash: 5d72f7002966b891d5cb66f953848ebe
@@ -989,6 +970,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: easyar
     className: ImageTrackerFrameFilter
+  - hash:
+      serializedVersion: 2
+      Hash: 1e5de37e9650d2df9d7d1d9f59185433
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ARNavigation
+    className: ModelController
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -1195,6 +1182,12 @@ ScriptsOnlyBuild:
     className: SelectButton
   - hash:
       serializedVersion: 2
+      Hash: 3e325de3bf0d76b7f785ef1e2c1c3f20
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ARNavigation
+    className: KeyPointController
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: easyar
@@ -1351,4 +1344,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Model.unity
   - Assets/Scenes/Navigation.unity
   - Assets/Scenes/Road.unity
-  playerPath: C:/UnityWorkplace/Sample/ARNav.apk
+  playerPath: C:/UnityWorkplace/Sample/ARNav_v3.apk

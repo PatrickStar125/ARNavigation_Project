@@ -64,9 +64,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Difficulty\NavController.cs" />
-    <Compile Include="Assets\Difficulty\PathsController.cs" />
-    <Compile Include="Assets\Difficulty\SOController.cs" />
     <Compile Include="Assets\EasyAR\Scripts\ARAssembly.cs" />
     <Compile Include="Assets\EasyAR\Scripts\ARSession.cs" />
     <Compile Include="Assets\EasyAR\Scripts\CameraImageRenderer.cs" />
@@ -108,8 +105,11 @@
     <Compile Include="Assets\Scripts\Dbg\DbgNavigationController.cs" />
     <Compile Include="Assets\Scripts\DynamicObject.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\KPDate.cs" />
     <Compile Include="Assets\Scripts\KeyPoint.cs" />
     <Compile Include="Assets\Scripts\KeyPointController.cs" />
+    <Compile Include="Assets\Scripts\KeyPointModel.cs" />
+    <Compile Include="Assets\Scripts\KeyPointModelController.cs" />
     <Compile Include="Assets\Scripts\MapController.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\ModelController.cs" />

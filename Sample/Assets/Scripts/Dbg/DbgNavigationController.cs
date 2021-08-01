@@ -78,7 +78,6 @@ namespace ARNavigation.Dbg
         {
             game = FindObjectOfType<GameController>();
             SetStaticObject();
-            LoadObjects();
             LoadTarget();
             LoadRoad();
             BakePath();
@@ -116,26 +115,6 @@ namespace ARNavigation.Dbg
         public void Back()
         {
             game.BackDbgMenu();
-        }
-        /// <summary>
-        /// 加载动态物体
-        /// </summary>
-        private void LoadObjects()
-        {
-            if (game)
-            {
-                var list = game.LoadDynamicObject();
-                foreach (var item in list)
-                {
-                    var dynamicObject = JsonUtility.FromJson<DynamicObject>(item);
-                    var tf = Instantiate(blueBox, ssMap);
-                    tf.localPosition = dynamicObject.position;
-                    tf.localEulerAngles = dynamicObject.rotation;
-                    tf.localScale = dynamicObject.scale;
-                    var obj = tf.GetComponent<ShowSelfObject>();
-                    obj.SetVisible((tf.position - player.position).magnitude <= 2);
-                }
-            }
         }
         /// <summary>
         /// 加载目的地

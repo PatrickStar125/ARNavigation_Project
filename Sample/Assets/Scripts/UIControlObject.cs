@@ -13,10 +13,6 @@ namespace ARNavigation
         /// </summary>
         public Button[] btnActions;
         /// <summary>
-        /// 类型按钮组
-        /// </summary>
-        public Button[] btnTypes;
-        /// <summary>
         /// 数值按钮组
         /// </summary>
         public Button[] btnNumbers;
@@ -32,10 +28,6 @@ namespace ARNavigation
         /// 未激活颜色
         /// </summary>
         public Color colorInactive;
-        /// <summary>
-        /// 动作类型
-        /// </summary>
-        public string actionType;
         /// <summary>
         /// 动作数值
         /// </summary>
@@ -57,14 +49,6 @@ namespace ARNavigation
                     OnClickNumber(btn.name);
                 });
             }
-            //为类型按钮组添加事件响应
-            foreach (var btn in btnTypes)
-            {
-                btn.onClick.AddListener(delegate ()
-                {
-                    OnClickType(btn.name);
-                });
-            }
             //为动作按钮组添加事件响应
             foreach (var btn in btnActions)
             {
@@ -75,9 +59,7 @@ namespace ARNavigation
             }
             //设置默认按钮显示
             SetButtonColor(btnNumbers, "One");
-            SetButtonColor(btnTypes, "Position");
-            //设置默认类型和值
-            actionType = "Position";
+            //设置默认值
             actionNumber = 1;
 
             ClearSelected();
@@ -101,15 +83,6 @@ namespace ARNavigation
                     actionNumber = 0.1f;
                     break;
             }
-        }
-        /// <summary>
-        /// 类型按钮点击事件
-        /// </summary>
-        /// <param name="btnName">按钮名称</param>
-        private void OnClickType(string btnName)
-        {
-            SetButtonColor(btnTypes, btnName);
-            actionType = btnName;
         }
         /// <summary>
         /// 动作按钮点击事件
@@ -141,18 +114,7 @@ namespace ARNavigation
                         temp = new Vector3(0, 0, -actionNumber);
                         break;
                 }
-                switch (actionType)
-                {
-                    case "Position":
-                        selected.localPosition = selected.localPosition + temp;
-                        break;
-                    case "Rotation":
-                        selected.localEulerAngles = selected.localEulerAngles + temp;
-                        break;
-                    case "Scale":
-                        selected.localScale = selected.localScale + temp;
-                        break;
-                }
+                selected.localPosition = selected.localPosition + temp;
             }
             ShowSelectedInfo();
         }
@@ -188,7 +150,7 @@ namespace ARNavigation
         public void ClearSelected()
         {
             selected = null;
-            txtShow.text = "none";
+            txtShow.text = "未选中";
         }
         /// <summary>
         /// 显示选中对象信息
@@ -201,13 +163,9 @@ namespace ARNavigation
             }
             txtShow.text = string.Format(
                 @"Name:{0}
-                Position:{1}
-                Rotation:{2}
-                Scale:{3}",
+                Position:{1}",
                 selected.name,
-                selected.localPosition,
-                selected.localEulerAngles,
-                selected.localScale).Replace(" ", "");
+                selected.localPosition).Replace(" ", "");
         }
     }
 }

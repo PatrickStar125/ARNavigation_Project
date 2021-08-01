@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Road.unity
     guid: 6d3c2b1191a14ad49bd50c39575970e4
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
